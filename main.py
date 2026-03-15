@@ -9,8 +9,20 @@ def view():
         count += 1
 
 def select_items():
-    pass
+
+   selected_item = int(input("Select items from menus to orders: "))
+   if selected_item == 1:
+       print("you selected Pizza" )
+       print("your bill is 150 RS")
+   if selected_item == 2:
+       print("you selected Burger" )
+       print("your bill is 200 RS")
+   if selected_item == 3:
+       print("you selected Biriyani" )
+       print("your bill is 250 RS")
+
 
 
 view()
+select_items()
 
