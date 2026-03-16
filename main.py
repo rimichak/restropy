@@ -20,6 +20,8 @@ def select_items():
    if selected_item == 3:
        print("you selected Biriyani" )
        print("your bill is 250 RS")
+   
+
 
 
 
