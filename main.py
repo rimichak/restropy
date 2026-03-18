@@ -9,18 +9,38 @@ def view():
         count += 1
 
 def select_items():
+   
+   cart = []
+   total = 0
+   while True:
+        selected_item = int(input("Select items from menus to orders: "))
+        if selected_item == 1:
+            cart.append(("Pizza", 150))
+            print("you selected Pizza" )
+            print("your bill is 150 RS")
+            total += 150
+        if selected_item == 2:
+            cart.append(("Burger", 200))
+            print("you selected Burger" )
+            print("your bill is 200 RS")
+            total += 200
+        if selected_item == 3:
+            cart.append(("Biriyani", 250))
+            print("you selected Biriyani" )
+            print("your bill is 250 RS")
+            total += 250
 
-   selected_item = int(input("Select items from menus to orders: "))
-   if selected_item == 1:
-       print("you selected Pizza" )
-       print("your bill is 150 RS")
-   if selected_item == 2:
-       print("you selected Burger" )
-       print("your bill is 200 RS")
-   if selected_item == 3:
-       print("you selected Biriyani" )
-       print("your bill is 250 RS")
+        more = input("Want to add more items? Yes/No: ")
 
+        if more == "No":
+            break
+
+   print(" ---- Order Summary ---- ")
+   print("--- Item Ordered ----")
+
+   for item , price in cart:
+       print(f"{item} - {price} /-")
+   print(f"Total bill is: {total} /-")
 
 
 view()
