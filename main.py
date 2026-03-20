@@ -13,35 +13,58 @@ def select_items():
    cart = []
    total = 0
    while True:
-        selected_item = int(input("Select items from menus to orders: "))
+        try:
+            selected_item = int(input("Select items from menus to orders: "))
+        except ValueError:
+            print("Invalid input! Please enter a number.")
+            continue
         if selected_item == 1:
-            cart.append(("Pizza", 150))
+            item = "Pizza"
+            price = menus[item]
+            cart.append((item, price))
             print("you selected Pizza" )
-            print("your bill is 150 RS")
-            total += 150
+            print(f"your bill is {price} RS")
+            total += price
         if selected_item == 2:
-            cart.append(("Burger", 200))
+            item = "Burger"
+            price = menus[item]
+            cart.append((item, price))
             print("you selected Burger" )
-            print("your bill is 200 RS")
-            total += 200
+            print(f"your bill is {price} RS")
+            total += price
         if selected_item == 3:
-            cart.append(("Biriyani", 250))
+            item = "Biriyani"
+            price = menus[item]
+            cart.append((item, price))
             print("you selected Biriyani" )
-            print("your bill is 250 RS")
-            total += 250
+            print(f"your bill is {price} RS")
+            total += price
 
-        more = input("Want to add more items? Yes/No: ")
+        while True:
+            more = input("Want to add more items? Yes/No: ").strip().lower()
 
-        if more == "No":
+            if more in ["yes", "y"]:
+                break  
+
+            elif more in ["no", "n"]:
+                break 
+
+            else:
+                print("Invalid input! Please type Yes/Y or No/N.")
+        if more in ["no", "n"]:    
             break
 
    print(" ---- Order Summary ---- ")
    print("--- Item Ordered ----")
 
-   for item , price in cart:
-       print(f"{item} - {price} /-")
+   if not cart:
+       print("no item is ordered.")
+   else:
 
-   print(f"Total bill is: {total} /-")
+       for item , price in cart:
+            print(f"{item} - {price} /-")
+
+       print(f"Total bill is: {total} /-")
    
 
 view()
