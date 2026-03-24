@@ -12,7 +12,7 @@ def save_bill(cart, total):
         file.write("===== FOOD BILL =====\n\n")
 
         for item, price in cart:
-            file.write(f"{item:<10} ₹{price}\n")
+            file.write(f"{item} ₹{price}\n")
 
         file.write("\n----------------------\n")
         file.write(f"Total: ₹{total}\n")
