@@ -14,6 +14,6 @@ def save_bill(cart, total):
             file.write(f"{item} ₹{price}\n")
 
             file.write("\n----------------------\n")
-            file.write(f"Total: ₹{total}\n")
+    file.write(f"Total: ₹{total}\n")
 
     print(f"✅ Bill saved in {file_path}")
