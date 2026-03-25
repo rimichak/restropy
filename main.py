@@ -1,4 +1,6 @@
 #build a program where a user can view the menu select items and add multiple items to their order, calculate the final bill#
+from utils.bills import save_bill
+
 menus = {"Pizza": 150, "Burger": 200, "Biriyani": 250}
 
 def view():
@@ -65,6 +67,7 @@ def select_items():
             print(f"{item} - {price} /-")
 
        print(f"Total bill is: {total} /-")
+       save_bill(cart, total)
    
 
 view()
