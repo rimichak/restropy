@@ -1,0 +1,1 @@
+menus = {"Pizza": 150, "Burger": 200, "Biriyani": 250}
